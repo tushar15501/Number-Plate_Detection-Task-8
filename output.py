@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 
-import subprocess as sb
-import cgi
-
 print("content-type: text/html")
 print()
+
 
 print('''<style>
 pre{
@@ -15,9 +13,13 @@ pre{
 </style>
 ''')
 
+import subprocess as sb
+import cgi
+
 fs = cgi.FieldStorage()
 
 plate_no = fs.getvalue("plate_no")
+
 
 if plate_no == "KL 65 K 5455":
     print("<body style='padding: 40px;'>")
@@ -47,9 +49,9 @@ elif plate_no == "KA 64 N 0099":
     Registration Date : 2/12/2015
     Registering Authority : KARNATAKA, INDIA
     Vehicle Class : MCWG
-    Fuel Type : CNG
+      Fuel Type : CNG
     Engine No : IVK3N1734538
-      Chassis No : HMSURVWVQSVWE
+    Chassis No : HMSURVWVQSVWE
     Insurance Upto : 5/13/2025
     Fitness Upto : 5/10/2032
     </pre>''')
@@ -78,4 +80,4 @@ else:
     print('<h1 style="color:#df405a;" >Output</h1>')
     print("No Infomration available for this number...")
     print("</body>")
-                                         
+                                   
